@@ -1472,7 +1472,7 @@ $overlayHeaderPadding: 5px;
 		top: 0;
 		width: 100%;
 		padding: $overlayHeaderPadding;
-		z-index: 2;
+		z-index: 1;
 		box-sizing: border-box;
 	}
 		.reveal > .overlay header a {
@@ -2098,6 +2098,7 @@ $notesWidthPercent: 25%;
 		background-color: rgba(var(--r-overlay-element-bg-color), 1);
 	}
 }
+
 
 
 /*********************************************
