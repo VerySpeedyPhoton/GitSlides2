@@ -41,13 +41,34 @@
 						<h3 style="font-weight: bold;">Motivation and Context for Using Git</h3>
 					</section>
 					<section data-markdown><textarea data-template>
-					## Slide
-					Text
+					#### Git is a software that allows you to keep track of changes made to a project over time. Git works by recording the changes you make to a project, storing those changes, then allowing you to reference them as needed.
+					</textarea></section>
+					<section data-markdown><textarea data-template>
+					## Git is an *essential* skill for any software developer.
+					It's also a **fundamental building block** of open science repositories.
+					... And in today's data-driven world, it's a **fantastic skill** for any researcher that wants to work on collaborative code-related projects to learn.
 					</textarea></section>
 
+					<section data-background-image="images/WhyGit1.png" data-background-size="contain">
+					</section>
 					<section data-markdown><textarea data-template>
-					## Slide
-					Text
+					## Rock climbing analogy!
+					</textarea></section>
+					<section data-background-image="images/WhyGit2.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/WhyGit3.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/WhyGit4.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/WhyGit5.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/WhyGit6.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/WhyGit7.png" data-background-size="contain">
+					</section>
+
+					<section data-markdown><textarea data-template>
+					### Learn Git early in your career so you can use it to climb to victory!!!
 					</textarea></section>
 				</section>
 
@@ -55,15 +76,117 @@
 				<section data-transition="convex">
 					<section>
 						<h3 style="font-weight: bold;">The Simplest Git Commands</h3>
+                                        	<p><small>Let's review some of the simplest commands! Note: Git has a dazzling number of options, but most developer workflows only leverage a fraction of the capabilities. Find what works for you, and don't worry too much about mastering every aspect :P</small></p>
+			
 					</section>
 					<section data-markdown><textarea data-template>
-					## Slide
+					## `git clone` 
+					Clones a repository. 
+
+					<small>(Github's ubiquitity for sharing files & open-source software means that you've probably used this command already, regardless of any prior Git experience or not!)</small>
+
+					*One thing that Git does behind the scenes when you clone **`repo-name`** is give the remote address the name `origin`, so that you can refer to it more conveniently.*
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					## `git init` 
+					This command initializes Git inside a folder.
+					<small>
+					- It creates a .git folder (viewable with the command "`ls -a`").
+					- The .git folder can be removed with "`rm -rf .git`"
+					- The command also gives you a 'master' branch.
+					- Use "`git branch -M main`" to get us off "master" and into "main".
+
+					</small>
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					## `git add`
+					Moves files to the staging area.
+
+					(Use "`git status`" to see all the files that are currently staged, e.g. that have changes ready to be committed.)
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					## `git commit`
+					Essentially creating a save point for our files at some point in time.
+
+					- Metaphor: Lining a family up for a group photo.
+						- "`git add`" is staging everyone for the photo
+						- "`git commit`" is taking the photo
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					## `git log`
+					Prints the history of git commits.
+			
+					- Includes the commit messages that are included with each commit.
+					- Useful for checking the 'hash' identification for referencing individual commits.
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					## `git branch` 
+					A "branch" is just a chain of commits.
+
+					(Can also be thought of as *pointers* to a commit.)
+					<small>
+					- A *branch* means: "I want to include the work of this commit and all parent commits."
+					- No branches are present until a first commit is made.
+					- Depending on the version of Git you are working with, the very first branch will be called "`master`"(old) or "`main`"(new).
+					- It's common practice to initialize the "`main`" branch with "`git branch -M main`".
+					- When making changes to a codebase, we first create a new branch, so that any changes we make can be tested on that seperate branch.
+					- Since branching is incredibly lightweight, and since small code changes are easier to merge than large code changes, the Git creed is: ***Branch early and branch often!***
+			
+					</small>
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					## `git checkout`
+					This command is the primary method of 'moving around' in Git.
+
+					- It lets you select specific branches.
+						<small> - (also, lets you select specific commits <- this is called "detaching the HEAD")</small>
+						<small> - (The commit you are currently on is known as the `HEAD` commit: "git show HEAD".)</small>
+						<small> - (Examples of detaching the HEAD:  "git checkout HEAD^" ... "git checkout HEAD~4")</small>
+					- "`git branch`" and "`git checkout`" are especially important to use because pushing or pulling with the main/master branch is bad coding practice.
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					## `git merge`
+					Merges specified branch with current branch.
+
+					 (e.g. if you're currently on `main`, then `git merge [branch_name]` merges `[branch_name]` with `[main]`)
+					<small>
+					- For resolving merge conflicts:
+						- `<<<<<<< HEAD`            = main branch
+						- `>>>>>>> [branch]`   = other branch
+						- *From the code editor: Delete the content of the line as it appears in the `master` branch. Delete **all of Git’s special markings** including the words `HEAD` and `fencing`. If any of Git’s markings remain, for example, `>>>>>>>` and `=======`, the conflict remains.*
+						- *Then (after deleting the Git markings), just do another `git add` and `git commit -m "Resolved merge conflict"` to complete the branch merging.*
+					- Also, `git fetch` (used before a merge) is a command that helps prevent merge conflicts.
+
+					</small>	
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					## `git remote`
 					Text
 					</textarea></section>
 
 					<section data-markdown><textarea data-template>
-					## Slide
+					## `git push`
 					Text
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					### A Sampling of Other Useful Commands:
+					- `git fetch`
+					- `git pull`
+					- `git reset`
+					- `git revert`
+					- `git stash`
+					- `git show`
+					- `git rebase`
+					- `git cherry-pick`
 					</textarea></section>
 				</section>
 
@@ -108,36 +231,114 @@
 	
 				</section>
 
-
-
-				<section data-markdown>
-					<textarea data-template>
-					### Git Command Summary 
-					***<small>([link](https://www.google.com) to cheatsheet)</small>***
-					- `rebase`
-					- `revert`
-					</textarea>
-				</section>
-
-
 				<section data-transition="convex">
 					<section>
 						<h3 style="font-weight: bold;">Sample Git Workflows</h3>
 					</section>
 					<section data-markdown><textarea data-template>
-					## Workflow 1
+					#### Workflow 1: An Individual Workflow (Local, *without* a remote)
+					Commit, commit, commit, commit...
+					<img src="images/BasicGitWorkflow.png" alt="Picture" style="width: 100%; height: auto;">
+					
+					<small>(^ This picture taken from CodeAcademy :P)</small>
+					</textarea></section>
+				
+					<section>
+					<img src="images/WorkflowWalkthrough1.png" alt="Picture" style="width: 75%; height: auto;">
+					</section>
+
+					<section data-markdown><textarea data-template>
+					#### Workflow 2: An Individual Workflow (*with* a remote repository)
+					Commit, push, commit, commit, push, commit, push ...
+					</textarea></section>
+				
+					<section data-markdown><textarea data-template>
+					## Workflow 3:
 					Text
 					</textarea></section>
 
 					<section data-markdown><textarea data-template>
-					## Workflow 2
+					## Workflow 4:
 					Text
 					</textarea></section>
-				
+
 					<section data-markdown><textarea data-template>
-					## Workflow 3
+					## Workflow 5:
 					Text
 					</textarea></section>
+				</section>
+
+				<section>
+		
+					<section>
+					<h3>Git Command Cheatsheets</h3>
+					<style>
+					.container{
+					    display: grid;
+					    grid-template-columns: 1fr;
+					}
+					.col{
+					}
+					</style>
+
+					<div class="container">
+
+					<div class="col"><small>
+					<ul>
+					<li><b>git init</b> &nbsp <--- turns directory into a Git project (creates new repo)</li>
+					<li><b>git clone [repo_url] </b> &nbsp <--- clones repository</li>
+					<li><b>git clone [remote_location] [local_desired_name]</b> &nbsp <--- clones repo w/ name </li>
+					<li><b>git branch</b> &nbsp <--- shows all active branches, and indicates the current one</li>
+					<li><b>git branch [new-branch-name]</b> &nbsp <--- creates a new branch</li>
+					<li><b>git branch -d [branch-name]</b> &nbsp <--- deletes a branch that is already fully merged</li>
+					<li><b>git branch -D [branch-name]</b> &nbsp <--- deletes a branch that is NOT fully merged</li>
+					<li><b>git checkout -b [branch-name]</b> &nbsp <--- creates a new branch and switches to it</li>
+					<li><b>git checkout [branch-name]</b> &nbsp <--- switches to an existing branch (or commit)</li>
+					<li><b>git add .</b> &nbsp <--- adds all new files to the staging area</li>
+					<li><b>git add [file-name]</b> &nbsp <--- adds just one file to the staging area</li>
+					<li><b>git add [file-name1] [file-name2]</b> &nbsp <--- add two files to the staging area</li>
+					<li><b>git status</b> &nbsp <--- displays the changes that are ready to be committed</li>
+					<li><b>git commit -m "message"</b> &nbsp <--- saves changes from staging area to the local branch</li>
+					<li><b>git commit --amend</b> &nbsp <--- modifies the previous commit (convenient!)</li>
+					<li><b>git commit --amend --no-edit</b> &nbsp <--- same, but with no commit message modifications</li>
+					<li><b>git log</b> &nbsp <--- shows all of the commit logs for a project</li>
+					<li><b>git log --oneline</b> &nbsp <--- shows the list of commits in one line format</li>
+					<li><b>git log --stat</b> &nbsp <--- shows list of commits, with some additional statistics</li>
+					<li><b>git log -S "keyword"</b> &nbsp <--- displays list of commits containing keyword in the message</li>
+					<li><b>git log --oneline --graph</b> &nbsp <--- (for potentially nicer visualization)</li>
+					</ul>
+					</small></div>
+
+					</div>
+					</section>
+
+					<section>
+					<h3>Git Command Cheatsheets</h3>
+					<style>
+					.container{
+					    display: grid;
+					    grid-template-columns: 1fr;
+					}
+					.col{
+					}
+					</style>
+
+					<div class="container">
+
+					<div class="col"><small>
+					<ul>
+					<li><b>git </b> &nbsp <--- </li>
+					<li><b>git </b> &nbsp <--- </li>
+					<li><b>git </b> &nbsp <--- </li>
+					<li><b>git </b> &nbsp <--- </li>
+					<li><b>git </b> &nbsp <--- </li>
+					<li><b>git </b> &nbsp <--- </li>
+					<li><b>git </b> &nbsp <--- </li>
+					</ul>
+					</small></div>
+
+					</div>
+					</section>
 				</section>
 
 
@@ -148,11 +349,15 @@
                                         	<p><small>Transition from local coding to collaborative development!</small></p>
 					</section>
 	
-					<section data-markdown><textarea data-template>
-					## Slide
-                                        <h4> <small><a href="https://gitlab.com">Gitlab.com</a> </small></h4>
-					<h4> <small><a href="https://github.com">Github.com</a> </small></h4>
-					</textarea></section>
+					<section>
+						<h3><small>Example Barebones Github</small> </h3>
+						<img src="images/ExampleGithub.png" alt="Picture" style="width: 100%; height: auto;">
+					</section>
+				
+					<section>
+						<h3><small>Example Barebones Gitlab</small> </h3>
+						<img src="images/ExampleGitlab.png" alt="Picture" style="width: 100%; height: auto;">
+					</section>
 
 					<section data-markdown><textarea data-template>
 					## Slide
@@ -169,7 +374,7 @@
 	
 					<section data-markdown><textarea data-template>
 					## Slide
-					Text
+					(Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token
 					</textarea></section>
 
 					<section data-markdown><textarea data-template>
@@ -202,14 +407,144 @@
 						<h3 style="font-weight: bold;">Demonstration (with Github Pages!)</h3>
 					</section>
 
-					<section data-markdown><textarea data-template>
-					## Steps:
-					- `git clone `
-					</textarea></section>
+					<section>
+					<h3>Step 1: Set-up</h3>
+						<ol>
+							<li>Install <a href="https://nodejs.org">Node.js</a> (10.0.0 or later)</li>
+							<ul>
+								<small>
+								<li>(Only needed because we're using <a href="https://revealjs.com/installation/#full-setup">reveal.js</a>)</li>
+								<li>This is for the "npm start" command for testing the presentation slides locally.</li></small>
+							</ul>
+							<li>Make sure you've created a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic">Github access key</a>.</li>
+							<ul><small>
+								<li>Only needs to be done if you've never remotely connected to your Github before.</li>
+								<li>Give sufficient permissions: check the boxes for 'repo' and 'workflow'</li>
+							</small></ul>
+							<li>Go to your <a href="https://github.com">Github</a> repos and make a new, empty repository.</li>
+							<ul><small>
+								<li> 'Your repositories' > 'New'</li>
+								<li> No need to change anything; don't add a README file, etc. </li>
+							</small></ul>	
+						</ol>
+					</section>
+						
+					<section>
+					<h3>Step 2: Connect your local machine to your remote Github repository</h3>
+					<pre><code data-trim data-noescape>
+					#Create new folder & enter it:
+					mkdir demo && cd demo
+					
+					# Create placeholder file:
+					echo "# placeholder" >> README.md
 
+					# Initialize git inside the folder
+					git init
+					git add .
+					git commit -m "first commit"
+					git branch -M main	# won't work without a prior commit
+
+					# Establish connection to remote repository.
+					git remote add origin [link to your new empty repository]
+					git push -u origin main  # Enter Github username, & access key	
+					</code></pre>
+					</section>
+
+					<section>
+					<h3>Step 3: Initialize reveal.js</h3>
+					<pre><code data-trim data-noescape>
+					#We're going to play around with the reveal.js sample slidedeck.
+					# Clone the 'reveal.js' repository:
+					git clone https://github.com/hakimel/reveal.js.git
+
+					# Move to the reveal.js folder and install dependencies:
+					cd reveal.js && npm install	# install only needs to be done once.
+
+					# View the slidedeck (hosted on local machine):
+					npm start
+
+					# To view the slides:
+					# Open a webbrowser and go to `http://localhost:8000`.
+
+					# Type 'Control-c' to exit the 'npm start' command.
+					</code></pre>
+					</section>
+
+					<section>
+					<h3>Step 4: Modify the slides.</h3>
+					<pre><code data-trim data-noescape>
+
+					#Create a new branch for our changes:
+					git checkout -b newFeature
+
+					# Edit the index.html file; add a new slide!
+					vim index.html		# a normal text editor works too.
+				
+					# Add our changes to the staging area:
+					git add index.hmtl
+
+					# Commit our changes:
+					git commit -m "added new slide"
+
+					# Merge our newFeature branch with the main branch:
+					git checkout main
+					git merge newFeature
+					</code></pre>
+					</section>
+		
+					<section>
+					<h3>Step 5: Host the slidedeck as a website on Github!</h3>
+					<pre><code data-trim data-noescape>
+
+					#Our new repository still only has a placeholder file.
+
+					# Re-establish connection to remote Github repo:
+					git remote remove origin 
+					git remote add origin [link to the repository]
+					# ^ Needed because 'git clone' changed our origin earlier.
+
+					# Let's push our commits to the Github repo:
+					git push -u origin main
+		
+					# Now, go to your Github repo.
+					# 'Settings' > 'Pages' > 'Select branch: main' > Save
+					# Wait a little while, refresh the page.
+					# A clickable link should appear for your deployed site :)
+					</code></pre>
+					</section>
+
+					<section>
+					<h3>Step 6: Make some more edits & update your deployed site.</h3>
+					<pre><code data-trim data-noescape>
+					#Let's change the title slide.
+				
+					# Edit the index.html file
+					# (demo.html has the code for the full reveal.js demo slides)
+					git checkout newFeature
+					vim index.html
+
+					# Save newFeature changes to main:
+					git add index.html
+					git commit -m "Added Title"
+					git checkout main
+					git merge newFeature
+
+					# Push commit to online repository:
+					git push
+					</code></pre>
+					</section>
+						
 					<section data-markdown><textarea data-template>
-					## Slide
-					Text
+					***That might have seemed a little complicated, but ultimately our workflow was just:***
+					<small>
+					- Switch to `newFeature` branch when making/testing changes.
+					- Edit the files to our heart's content (while on the `newFeature` branch).
+					- '`git add`' to stage the commit.
+					- '`git commit`' to register the commit.
+					- '`git merge`' to add `newFeature` commits to the main branch.
+					- '`git push`' to update our remote repository with our local changes.
+
+					**If this still seems confusing, please revisit the interactive tutorials on [LearnGitBranching.js.org](https://learngitbranching.js.org)**.
 					</textarea></section>
 				</section>
 
@@ -224,10 +559,10 @@
 						<li> <a href="https://training.github.com/downloads/github-git-cheat-sheet.pdf">Official Git cheatsheet</a></li>
 						<li> <a href="https://swcarpentry.github.io/git-novice">"Git Novice": Introductory Git/Github walkthrough and tutorial</a></li>
 
-                                                <li>No order here</li>
-                                                <li>Or here</li>
-                                                <li>Or here</li>
-                                                <li>Or here</li>
+                                                <li> <a href="https://munkm.github.io/2024-winterschool/git-collaboration.slides.html">Additional Slideshow Reference 1</a></li>
+                                                <li> <a href="https://inundata.org/talks/git-collaboration/#/">Additional Slideshow Reference 2 </a></li>
+                                                <li> <a href="https://jameshowison.github.io/peer_production_course/docs/additional_git_exercises.html">Additional Slideshow Reference 3 </a></li>
+                                                <li> <a href="https://munkm.github.io/2024-winterschool/peer-review.slides.html#/">Additional Slideshow Reference 4 </a></li>
                                         </ul></small>
 
 				</section>
