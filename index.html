@@ -170,12 +170,22 @@
 
 					<section data-markdown><textarea data-template>
 					## `git remote`
-					Text
+					A 'remote' is a Git repository that lives outside your Git project folder. 
+
+					Remotes can live on the web, on a shared network or even in a separate folder on your local computer.
 					</textarea></section>
 
 					<section data-markdown><textarea data-template>
 					## `git push`
-					Text
+
+					Pushes code changes to a remote repository. (If you don't have merge permissions on the repository, you'll need to open a pull request afterwards.)
+					<small>	
+					- Mental visualization: "push" code up and away, "pull" it back towards you.					
+					- Note: `git push` does not include empty folders, so you'll need a placeholder file if you want to do this.
+					- Also, if you want to include tags (from `git tag`), then you neeed to use `git push --tag`
+					- After doing `git push -u origin main`, you can just type `git push` for future pushes (e.g. "from here on out, I want the local branch main to connect to the main branch on origin"). You don't need to be completely verbose all the time.
+
+					</small>
 					</textarea></section>
 
 					<section data-markdown><textarea data-template>
@@ -288,6 +298,11 @@
 					- Start a pull request
 					- Discuss, add more commits, merge
 					</textarea></section>
+		
+					<section data-markdown><textarea data-template>
+					#### Workflow 4: Feature Branching Workflow (much better!!)
+					<img src="images/GitWorkflow4.png" alt="Picture" style="width: 70%; height: auto;">
+					</textarea></section>
 
 					<section data-markdown><textarea data-template>
 					#### Workflow 5: Forking Workflow
@@ -308,6 +323,15 @@
 						<h3 style="font-weight: bold;">Github / Gitlab Introduction</h3>
                                         	<p><small>Transition from local coding to collaborative development!</small></p>
 					</section>
+
+					<section data-markdown><textarea data-template>
+					### How is Github/Gitlab different from Git?
+
+					Git is a ***development tool***.
+					Github/Gitlab are ***services***.
+
+					Git can be used *outside of* and *without* Github/Gitlab.
+					</textarea></section>
 	
 					<section>
 						<h3><small>Example Barebones Github</small> </h3>
