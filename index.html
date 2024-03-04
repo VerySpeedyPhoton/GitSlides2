@@ -136,7 +136,8 @@
 					- It's common practice to initialize the "`main`" branch with "`git branch -M main`".
 					- When making changes to a codebase, we first create a new branch, so that any changes we make can be tested on that seperate branch.
 					- Since branching is incredibly lightweight, and since small code changes are easier to merge than large code changes, the Git creed is: ***Branch early and branch often!***
-			
+					- Tip: Generously use branches (but delete them when they're merged or stale)
+
 					</small>
 					</textarea></section>
 
@@ -250,98 +251,57 @@
 					<section data-markdown><textarea data-template>
 					#### Workflow 2: An Individual Workflow (*with* a remote repository)
 					Commit, push, commit, commit, push, commit, push ...
+					<small>
+					- Important Commands:
+						- `git remote add origin [link to remote repository]`
+						- `git push -u origin main`
+						- `git push`
+
+					</small> 
+					</textarea></section>
+			
+					<section data-markdown><textarea data-template>
+					#### What about working with others?
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					#### Workflow 3: Centralized Workflow
+					<img src="images/FeatureBranchingWorkflow.png" alt="Picture" style="width: 74%; height: auto;">
 					</textarea></section>
 				
 					<section data-markdown><textarea data-template>
-					## Workflow 3:
-					Text
+					#### Workflow 3: Centralized Workflow
+					(This collaborative workflow is the simplest conceptually.)
+					- "`git pull`" before starting work
+					- Everyone commits to main
+					- "`git push`"
+					- If there is no merge conflict, \<happy dance\>
+					- Otherwise fix merge conflict, then push
 					</textarea></section>
 
 					<section data-markdown><textarea data-template>
-					## Workflow 4:
-					Text
+					#### Workflow 4: Feature Branching Workflow (much better!!)
+					Members work on the same repository but use ***individual branches*** to do feature development.
+					- Create and switch to a branch
+					- Add commits
+					- Push feature branch to GitHub
+					- Start a pull request
+					- Discuss, add more commits, merge
 					</textarea></section>
 
 					<section data-markdown><textarea data-template>
-					## Workflow 5:
-					Text
+					#### Workflow 5: Forking Workflow
+					More advanced, but very popular!
+					</textarea></section>
+					<section data-markdown><textarea data-template>
+					<img src="images/ForkingWorkflow.png" alt="Picture" style="width: 58%; height: auto;">
+					</textarea></section>
+
+					<section data-markdown><textarea data-template>
+					#### Cute comic for visualizing `git fetch` and `git pull`:
+					<img src="images/GitFetchAndGitPull.png" alt="Picture" style="width: 80%; height: auto;">
 					</textarea></section>
 				</section>
-
-				<section>
-		
-					<section>
-					<h3>Git Command Cheatsheets</h3>
-					<style>
-					.container{
-					    display: grid;
-					    grid-template-columns: 1fr;
-					}
-					.col{
-					}
-					</style>
-
-					<div class="container">
-
-					<div class="col"><small>
-					<ul>
-					<li><b>git init</b> &nbsp <--- turns directory into a Git project (creates new repo)</li>
-					<li><b>git clone [repo_url] </b> &nbsp <--- clones repository</li>
-					<li><b>git clone [remote_location] [local_desired_name]</b> &nbsp <--- clones repo w/ name </li>
-					<li><b>git branch</b> &nbsp <--- shows all active branches, and indicates the current one</li>
-					<li><b>git branch [new-branch-name]</b> &nbsp <--- creates a new branch</li>
-					<li><b>git branch -d [branch-name]</b> &nbsp <--- deletes a branch that is already fully merged</li>
-					<li><b>git branch -D [branch-name]</b> &nbsp <--- deletes a branch that is NOT fully merged</li>
-					<li><b>git checkout -b [branch-name]</b> &nbsp <--- creates a new branch and switches to it</li>
-					<li><b>git checkout [branch-name]</b> &nbsp <--- switches to an existing branch (or commit)</li>
-					<li><b>git add .</b> &nbsp <--- adds all new files to the staging area</li>
-					<li><b>git add [file-name]</b> &nbsp <--- adds just one file to the staging area</li>
-					<li><b>git add [file-name1] [file-name2]</b> &nbsp <--- add two files to the staging area</li>
-					<li><b>git status</b> &nbsp <--- displays the changes that are ready to be committed</li>
-					<li><b>git commit -m "message"</b> &nbsp <--- saves changes from staging area to the local branch</li>
-					<li><b>git commit --amend</b> &nbsp <--- modifies the previous commit (convenient!)</li>
-					<li><b>git commit --amend --no-edit</b> &nbsp <--- same, but with no commit message modifications</li>
-					<li><b>git log</b> &nbsp <--- shows all of the commit logs for a project</li>
-					<li><b>git log --oneline</b> &nbsp <--- shows the list of commits in one line format</li>
-					<li><b>git log --stat</b> &nbsp <--- shows list of commits, with some additional statistics</li>
-					<li><b>git log -S "keyword"</b> &nbsp <--- displays list of commits containing keyword in the message</li>
-					<li><b>git log --oneline --graph</b> &nbsp <--- (for potentially nicer visualization)</li>
-					</ul>
-					</small></div>
-
-					</div>
-					</section>
-
-					<section>
-					<h3>Git Command Cheatsheets</h3>
-					<style>
-					.container{
-					    display: grid;
-					    grid-template-columns: 1fr;
-					}
-					.col{
-					}
-					</style>
-
-					<div class="container">
-
-					<div class="col"><small>
-					<ul>
-					<li><b>git </b> &nbsp <--- </li>
-					<li><b>git </b> &nbsp <--- </li>
-					<li><b>git </b> &nbsp <--- </li>
-					<li><b>git </b> &nbsp <--- </li>
-					<li><b>git </b> &nbsp <--- </li>
-					<li><b>git </b> &nbsp <--- </li>
-					<li><b>git </b> &nbsp <--- </li>
-					</ul>
-					</small></div>
-
-					</div>
-					</section>
-				</section>
-
-
 
 				<section data-transition="convex">
 					<section>
@@ -360,8 +320,11 @@
 					</section>
 
 					<section data-markdown><textarea data-template>
-					## Slide
-					Text
+					### Key Difference Between Github and Gitlab: **Data Privacy**
+					Github is owned by Microsoft, and they are using the content uploaded to the site to train their neural networks, etc.
+					If data privacy is something you're passionate about (or end up needing), Gitlab may be a better option. They have almost identical capabilities.
+ 
+					However, I have not yet carved out the time to explore Gitlab fully, so we're going to use Github here. 
 					</textarea></section>
 				</section>
 
@@ -369,17 +332,20 @@
 				<section data-transition="convex">
 					<section>
 						<h3 style="font-weight: bold;">Github Overview</h3>
-                                        	<p><small>Creating an account;  creating a repository;  pulling/pushing</small></p>
+                                        	<p><small>Creating an account;  creating a repository;  creating an access token</small></p>
 					</section>
+					<section data-markdown><textarea data-template>
+					## Creating an account:
+					[https://github.com/signup](https://github.com/signup)
+					</textarea></section>
+					<section data-markdown><textarea data-template>
+					## Creating a repository:
+					<img src="images/CreateNewRepo.png" alt="Picture" style="width: 100%; height: auto;">
+					</textarea></section>
 	
 					<section data-markdown><textarea data-template>
-					## Slide
+					## Creating an access token:
 					(Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token
-					</textarea></section>
-
-					<section data-markdown><textarea data-template>
-					## Slide
-					Text
 					</textarea></section>
 
 				</section>
