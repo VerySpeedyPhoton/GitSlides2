@@ -379,22 +379,79 @@
 					<section>
 						<h3 style="font-weight: bold;">Collaborative Code Reviews</h3>
 					</section>
-	
+		
 					<section data-markdown><textarea data-template>
-					## Slide
-					Text
+					### Different approaches to code review, depending on your role:
+					(You can wear multiple hats on different projects.)
+					<small> 
+					- **Maintainer**: Folks who are in charge of keeping a project stable and up-to-date. 
+						- (note that maintainers aren't always focused on adding new features, and instead often put their attention towards project infrastructure/usability)
+
+					- **Contributor**: Folks who submit PR (Pull Requests), issue, or feedback to a project
+
+					- **User**: Folks who use the code.  Users might never show up on Github, and instead will likely access the software through the docs
+						- note that the User voice are often underrepresented (b/c they're not present at code reviews)
+
+					- **Developer**: Connotation of being somewhere between a maintainer and a contributor.
+
+					</small>
 					</textarea></section>
 
+					<section>
+						<h3>Peer Code Review</h3>
+						<a href="https://munkm.github.io/2024-winterschool/peer-review.slides.html#/">Helpful reference slideshow on the Peer Code Review Process </a>
+					</section>
+
 					<section data-markdown><textarea data-template>
-					## Slide
-					Text
+					## Pull Requests 
+					These are a great opportunity for implementing best practices into your collaborative coding workflow.
+
+					For example, having a different person accept the Pull Request than the person who created the Pull Request.
+					<small>(checks & balances, opportunity to establish greater trust in the codebase)</small> 
 					</textarea></section>
+	
+					<section>
+						<h3><small>Pull Requests</small> </h3>
+						<img src="images/HelloWorldRepo.png" alt="Picture" style="width: 100%; height: auto;">
+					</section>
+
+					<section>
+						<h3><small>Pull Requests</small> </h3>
+						<img src="images/OpenPullRequests.png" alt="Picture" style="width: 100%; height: auto;">
+					</section>
+
+					<section>
+						<h3><small>Pull Requests</small> </h3>
+						<img src="images/ClosedPullRequests.png" alt="Picture" style="width: 100%; height: auto;">
+					</section>
+
+					<section>
+						<a href="https://www.youtube.com/watch?v=jRLGobWwA3Y">Youtube Video: How to Pull Request in 3 Minutes</a>
+					</section>
+				
+					<section>
+						<h3 style="font-weight: bold;">Pull Request / Review Demonstration!</h3><small>
+						<ol>
+						<li>(On Github): Fork repository</li>
+						<li>(In terminal): "git clone" the forked version of the repo</li>
+						<li>(In terminal): Create a new branch, and switch to it.</li>
+						<li>(In terminal): Edit code, "git add", "git commit"</li>
+						<li>(In terminal): Push completed branch to Github: "git push -u origin [new-branch]"</li>
+						<li>(On Github): The new branch should be visible. Now click 'New pull request'.</li>
+						<li>(On Github): Submit the pull request (right side: "from" new-branch, left side: "to" main)</li>
+						<li>(On Github): Maintainer logs in, sees the Open pull request, and reviews the changes.</li>
+						<li>(On Github): (Complete additional code reviews / checks as needed.)</li>
+						<li>(On Github): If pull request is accepted, the Maintainer merges it with 'Confirm merge'.</li>
+						<li>Contribution is complete!</li>
+
+						</ol></small>
+					</section>
 				</section>
 
 
 				<section data-transition="convex">
 					<section>
-						<h3 style="font-weight: bold;">Demonstration (with Github Pages!)</h3>
+						<h3 style="font-weight: bold;">Individual Workflow Demonstration (with Github Pages!)</h3>
 					</section>
 
 					<section>
